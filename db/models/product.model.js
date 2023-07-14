@@ -30,7 +30,7 @@ const ProductSchema = {
     allowNull: false,
     type: DataTypes.DATE,
     field: 'created_at',
-    defaultValue: Sequelize.Now,
+    defaultValue: Sequelize.NOW,
   },
   categoryId: {
     field: 'category_id',
@@ -48,7 +48,7 @@ const ProductSchema = {
 class Product extends Model {
   static associate(models) {
     this.belongsTo(models.Category, {
-      as: 'categoty',
+      as: 'category',
     });
   }
 

@@ -22,7 +22,7 @@ const CategorySchema = {
     allowNull: false,
     type: DataTypes.DATE,
     field: 'created_at',
-    defaultValue: Sequelize.Now,
+    defaultValue: Sequelize.NOW,
   },
 };
 
