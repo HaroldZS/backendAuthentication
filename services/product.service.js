@@ -45,8 +45,7 @@ class ProductsService {
     const { price_min, price_max } = query;
     if (price_min && price_max) {
       options.where.price = {
-        [Op.gte]: price_min,
-        [Op.lte]: price_max,
+        [Op.between]: [price_min, price_max],
       };
     }
     const products = await models.Product.findAll(options);
