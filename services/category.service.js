@@ -30,7 +30,9 @@ class CategoryService {
   }
 
   async delete(id) {
-    return { id };
+    const model = await this.findOne(id);
+    await model.destroy(id);
+    return { rta: true };
   }
 }
 
